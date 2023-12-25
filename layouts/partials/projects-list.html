@@ -1,9 +1,9 @@
 <!-- layouts/partials/projects-list.html -->
 <section id="projects">
     <div class="projects-container">
-        {{ if eq .Type "projects" }}
+        
         <h2>Projects</h2>
-        {{ end }}
+        
         {{ range .Site.RegularPages.ByDate.Reverse }}
         {{ if eq .Type "projects" }}
             <div class="project-container">
