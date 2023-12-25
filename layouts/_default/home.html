@@ -1,7 +1,9 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+
+  <!-- Load the about me block -->
+  {{ $about_me := .Site.GetPage "about_me" }}
+  {{ if $about_me }}
+    {{ partial "about-me.html" $about_me }}
   {{ end }}
+  {{ partial "projects-list.html" . }}
 {{ end }}
